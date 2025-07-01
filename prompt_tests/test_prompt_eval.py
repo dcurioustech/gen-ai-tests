@@ -8,6 +8,8 @@ def test_bertscore_identical():
     assert score == pytest.approx(1.0, abs=0.05)
 
 def test_bertscore_unrelated():
+    # Two sentences that are unrelated should have a low BERTScore
+    # This is a simple example to showcase the limitations of BERTScore
     s1 = "The quick brown fox jumps over the lazy dog."
     s2 = "Quantum mechanics describes the behavior of particles at atomic scales."
     score = evaluate_bertscore(s1, s2)
